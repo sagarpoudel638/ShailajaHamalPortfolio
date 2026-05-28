@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shailaja Hamal — Early Childhood Teacher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --peach:        #F5E0D2;
+      --peach-mid:    #EDCEBF;
+      --peach-dark:   #C4622D;
+      --teal:         #5BBFB5;
+      --teal-light:   #D5F2F0;
+      --teal-dark:    #2E9E94;
+      --white:        #FFFFFF;
+      --text:         #4A3728;
+      --muted:        #8C7060;
+      --green:        #7BC47A;
+      --green-light:  #E6F7E6;
+      --yellow:       #F9D56E;
+      --yellow-light: #FEF8E1;
+      --radius:       22px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--peach);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────────────────── NAV ─── */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(74,55,40,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 62px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-circle {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--peach-dark);
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .nav-logo-text {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--peach-dark);
+      line-height: 1.2;
+    }
+    .nav-logo-text span { display: block; font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+    .nav-links { display: flex; gap: 4px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--muted);
+      padding: 7px 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--peach);
+      color: var(--peach-dark);
+    }
+    .nav-contact {
+      background: var(--peach-dark) !important;
+      color: white !important;
+      padding: 8px 18px !important;
+      border-radius: 50px !important;
+    }
+    .nav-contact:hover { opacity: 0.88; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .nav-burger span { display: block; width: 22px; height: 2.5px; background: var(--muted); border-radius: 3px; transition: all 0.3s; }
+
+    /* ─────────────────────────────── HERO ─── */
+    .hero {
+      background: var(--peach);
+      position: relative;
+      overflow: hidden;
+      padding: 56px 32px 0;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    /* big soft circle behind illustration */
+    .hero-circle {
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: var(--peach-mid);
+      z-index: 0;
+    }
+    /* dashed arc lines */
+    .hero-dashes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* clouds */
+    .cloud {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: flex-end;
+    }
+    .hero-text { padding-bottom: 52px; }
+    .hero-label {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      letter-spacing: 0.4px;
+    }
+    .hero-text h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: var(--peach-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      margin-bottom: 28px;
+      line-height: 1.75;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--peach-dark);
+      color: white;
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(196,98,45,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(196,98,45,0.38); }
+    .hero-btn svg { width: 18px; height: 18px; }
+    .hero-img-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      max-width: 460px;
+      display: block;
+      filter: drop-shadow(0 8px 24px rgba(74,55,40,0.12));
+      animation: gentle-float 5s ease-in-out infinite;
+    }
+    .hero-attribution {
+      position: absolute;
+      bottom: 6px; right: 8px;
+      font-size: 0.65rem;
+      color: rgba(74,55,40,0.4);
+      z-index: 3;
+    }
+    .hero-attribution a { color: inherit; }
+
+    /* ─── speech bubble ─── */
+    .bubble {
+      position: absolute;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 8px 16px;
+      border-radius: 16px 16px 16px 4px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .bubble-abc { left: 5%; top: 55%; border-radius: 12px; }
+    .bubble-tas { right: 4%; bottom: 28%; border-radius: 16px 16px 4px 16px; }
+
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    /* ─────────────────────────────── WAVE DIVIDER ─── */
+    .wave-down { display: block; width: 100%; margin-bottom: -4px; }
+    .wave-up   { display: block; width: 100%; margin-top: -4px; }
+
+    /* ─────────────────────────────── SECTIONS ─── */
+    .section-white { background: var(--white); padding: 64px 32px; }
+    .section-peach  { background: var(--peach); padding: 64px 32px; }
+
+    .container { max-width: 1060px; margin: 0 auto; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .section-heading-pill {
+      width: 6px; height: 40px;
+      border-radius: 6px;
+      background: var(--peach-dark);
+      flex-shrink: 0;
+    }
+    .section-heading h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 800;
+      color: var(--peach-dark);
+    }
+    .section-heading .sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ─────────────────────────────── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--peach);
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(74,55,40,0.1);
+    }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 16px; }
+    .about-text h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--peach-dark);
+      margin-bottom: 14px;
+    }
+    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--text); }
+    .about-highlight {
+      display: inline;
+      background: var(--yellow-light);
+      color: #92600a;
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 1px 5px;
+    }
+    .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .about-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--peach);
+      color: var(--peach-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 50px;
+      border: 1.5px solid var(--peach-mid);
+    }
+    .about-badge img { width: 18px; height: 18px; object-fit: contain; }
+
+    /* ─────────────────────────────── CERTS ─── */
+    .cert-banner {
+      width: 100%;
+      height: 160px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .cert-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .cert-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(196,98,45,0.75) 0%, rgba(196,98,45,0.2) 60%, transparent);
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+    }
+    .cert-banner-overlay h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+    .cert-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 0 3px 16px rgba(74,55,40,0.07);
+      border-top: 4px solid var(--peach-dark);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cert-card:nth-child(2) { border-top-color: var(--teal); }
+    .cert-card:nth-child(3) { border-top-color: var(--green); }
+    .cert-card:nth-child(4) { border-top-color: var(--yellow); }
+    .cert-card:nth-child(5) { border-top-color: #B07FD4; }
+    .cert-card:nth-child(6) { border-top-color: #F4845F; }
+    .cert-card:nth-child(7) { border-top-color: var(--teal); }
+    .cert-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(74,55,40,0.13); }
+    .cert-card-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--peach);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .cert-card-icon svg { width: 20px; height: 20px; color: var(--peach-dark); }
+    .cert-card:nth-child(2) .cert-card-icon { background: var(--teal-light); }
+    .cert-card:nth-child(2) .cert-card-icon svg { color: var(--teal-dark); }
+    .cert-card:nth-child(3) .cert-card-icon { background: var(--green-light); }
+    .cert-card:nth-child(3) .cert-card-icon svg { color: #2e7d32; }
+    .cert-card-name { font-weight: 800; font-size: 0.9rem; color: var(--text); margin-bottom: 4px; }
+    .cert-card-detail { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .cert-badge {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: var(--peach);
+      color: var(--peach-dark);
+    }
+
+    /* ─────────────────────────────── EDUCATION ─── */
+    .edu-card {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(74,55,40,0.09);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+    .edu-img { overflow: hidden; }
+    .edu-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .edu-body {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .edu-badge {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .edu-body h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .edu-body .school {
+      font-size: 1rem;
+      color: var(--peach-dark);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .edu-body .year { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+
+    /* ─────────────────────────────── EXPERIENCE ─── */
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
+
+    .exp-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 3px 18px rgba(74,55,40,0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .exp-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(74,55,40,0.13); }
+
+    /* cards with side image */
+    .exp-card-img {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+    .exp-card-img .exp-side-img {
+      overflow: hidden;
+    }
+    .exp-card-img .exp-side-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .exp-card-img .exp-side-img.contain-img {
+      background: var(--peach);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .exp-card-img .exp-side-img.contain-img img {
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .exp-body { padding: 24px 26px; }
+    .exp-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+    .tag-school    { background: var(--green-light); color: #2e7d32; }
+    .tag-practicum { background: var(--teal-light);  color: var(--teal-dark); }
+    .tag-other     { background: var(--yellow-light); color: #92600a; }
+    .exp-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .exp-org { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin: 4px 0 4px; }
+    .exp-period {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .period-green  { background: var(--green-light);  color: #2e7d32; }
+    .period-teal   { background: var(--teal-light);   color: var(--teal-dark); }
+    .period-yellow { background: var(--yellow-light); color: #92600a; }
+    .exp-body ul { padding-left: 18px; }
+    .exp-body ul li {
+      font-size: 0.88rem;
+      color: #5C4033;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .exp-body ul li::marker { color: var(--peach-dark); }
+    .exp-attribution { font-size: 0.65rem; color: var(--muted); margin-top: 8px; }
+    .exp-attribution a { color: var(--muted); }
+
+    /* exp with full image top */
+    .exp-card-full-img .exp-top-img {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+    .exp-card-full-img .exp-top-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      object-position: center 35%;
+    }
+    .exp-card-full-img .exp-top-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.95));
+    }
+
+    /* ─────────────────────────────── SKILLS ─── */
+    .skills-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 26px 22px;
+      box-shadow: 0 3px 16px rgba(74,55,40,0.07);
+    }
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .skill-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--peach);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .skill-card-icon img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .skill-card-icon.teal-bg  { background: var(--teal-light); }
+    .skill-card-icon.green-bg { background: var(--green-light); }
+    .skill-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 50px;
+      transition: transform 0.15s;
+      cursor: default;
+    }
+    .skill-tag:hover { transform: scale(1.07); }
+    .skill-card:nth-child(1) .skill-tag { background: var(--peach); color: var(--peach-dark); border: 1.5px solid var(--peach-mid); }
+    .skill-card:nth-child(2) .skill-tag { background: var(--teal-light); color: var(--teal-dark); }
+    .skill-card:nth-child(3) .skill-tag { background: var(--green-light); color: #2e7d32; }
+
+    /* skills bottom image strip */
+    .skills-footer-img {
+      margin-top: 36px;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 140px;
+      position: relative;
+    }
+    .skills-footer-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 60%;
+    }
+    .skills-footer-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(91,191,181,0.55), rgba(91,191,181,0.15));
+      display: flex; align-items: center; padding: 0 30px;
+    }
+    .skills-footer-img-overlay p {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+    }
+
+    /* ─────────────────────────────── FOOTER ─── */
+    footer {
+      background: var(--peach-dark);
+      color: rgba(255,255,255,0.85);
+      padding: 44px 32px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: 0; right: 0;
+      height: 48px;
+      background: var(--peach);
+      clip-path: ellipse(56% 100% at 50% 0%);
+    }
+    .footer-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .footer-name {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .footer-tagline { font-size: 0.9rem; opacity: 0.8; margin-bottom: 16px; }
+    .footer-email a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .footer-email a:hover { background: rgba(255,255,255,0.25); }
+    .footer-refs {
+      font-size: 0.88rem;
+      opacity: 0.8;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .footer-attribution {
+      background: rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.78rem;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+    .footer-attribution strong { display: block; margin-bottom: 4px; color: white; font-size: 0.82rem; }
+    .footer-attribution a { color: rgba(255,255,255,0.9); font-weight: 700; }
+    .footer-copy {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      font-size: 0.76rem;
+      opacity: 0.5;
+    }
+
+    /* ─────────────────────────────── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      .hero { padding: 40px 20px 0; min-height: unset; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-text { padding-bottom: 0; order: 1; }
+      .hero-text p { margin-left: auto; margin-right: auto; }
+      .hero-img-wrap { order: 2; }
+      .hero-circle { width: 400px; height: 400px; right: -80px; top: -80px; }
+      .bubble-abc { display: none; }
+      .bubble-tas { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap { max-width: 320px; margin: 0 auto; aspect-ratio: 1/1; }
+
+      .edu-card { grid-template-columns: 1fr; }
+      .edu-img { height: 200px; }
+
+      .exp-card-img { grid-template-columns: 1fr; }
+      .exp-card-img .exp-side-img { height: 180px; }
+
+      .skills-row { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; }
+
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0; background: white; padding: 12px 20px 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: 4px; }
+      .nav-links.open a { border-radius: 10px; }
+      .nav-burger { display: flex; }
+    }
+
+    @media (max-width: 500px) {
+      .section-white, .section-peach { padding: 48px 16px; }
+      .hero { padding: 32px 16px 0; }
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+      footer { padding: 40px 16px 28px; }
+    }
+
+    @media (max-width: 380px) {
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ───────────────────── NAV ───────────────────── -->
+<nav id="top-nav">
+  <a class="nav-logo" href="#top">
+    <div class="nav-logo-circle">SH</div>
+    <div class="nav-logo-text">
+      Shailaja Hamal
+      <span>Early Childhood Teacher</span>
+    </div>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="mailto:shailuhamal40@gmail.com" class="nav-contact">Contact</a>
+  </div>
+  <div class="nav-burger" id="nav-burger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ───────────────────── HERO ───────────────────── -->
+<section class="hero" id="top">
+  <!-- big peach circle -->
+  <div class="hero-circle"></div>
+
+  <!-- SVG dashed arcs -->
+  <svg class="hero-dashes" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 100 400 Q 400 100 750 300 Q 950 420 1100 200" stroke="#C4622D" stroke-width="2" stroke-dasharray="8 10" fill="none" opacity="0.18"/>
+    <path d="M 0 500 Q 300 200 600 350 Q 800 440 1000 180" stroke="#5BBFB5" stroke-width="1.5" stroke-dasharray="6 9" fill="none" opacity="0.15"/>
+  </svg>
+
+  <!-- Clouds (SVG) -->
+  <svg class="cloud" style="top:6%;left:2%;width:130px;opacity:0.8;" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,75 Q8,75 8,55 Q8,38 25,35 Q28,15 50,15 Q68,15 74,30 Q85,22 100,30 Q115,22 130,30 Q148,28 150,45 Q165,46 165,60 Q165,75 148,75 Z" fill="white" opacity="0.9"/>
+  </svg>
+  <svg class="cloud" style="top:12%;right:36%;width:90px;opacity:0.65;" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,75 Q8,75 8,55 Q8,38 25,35 Q28,15 50,15 Q68,15 74,30 Q85,22 100,30 Q115,22 130,30 Q148,28 150,45 Q165,46 165,60 Q165,75 148,75 Z" fill="white" opacity="0.9"/>
+  </svg>
+  <svg class="cloud" style="top:5%;right:8%;width:110px;opacity:0.7;" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,75 Q8,75 8,55 Q8,38 25,35 Q28,15 50,15 Q68,15 74,30 Q85,22 100,30 Q115,22 130,30 Q148,28 150,45 Q165,46 165,60 Q165,75 148,75 Z" fill="white" opacity="0.9"/>
+  </svg>
+
+  <!-- speech bubbles -->
+  <div class="bubble bubble-abc">A B C D E F G ...</div>
+  <div class="bubble bubble-tas">Based in TAS, Australia</div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-label">Early Childhood Teacher · TRB Registered</span>
+      <h1>Where learning<br/>is always<br/>joyful</h1>
+      <p>
+        Qualified Early Childhood Teacher passionate about play-based learning, the EYLF,
+        and building safe, inclusive environments for children birth to 6 years.
+      </p>
+      <a class="hero-btn" href="mailto:shailuhamal40@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Get in Touch
+      </a>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="vecteezy_happy-school-children-with-piles-of-books_.png"
+           alt="Happy children with books illustration" />
+    </div>
+  </div>
+  <div class="hero-attribution"><a href="https://www.vecteezy.com" target="_blank" rel="noopener">Illustration: Vecteezy.com</a></div>
+</section>
+
+<!-- wave -->
+<svg class="wave-down" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:var(--peach);display:block;">
+  <path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="white"/>
+</svg>
+
+<!-- ───────────────────── ABOUT ───────────────────── -->
+<section class="section-white" id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading-pill"></div>
+      <div>
+        <h2>About Me</h2>
+        <p class="sub">Professional Summary</p>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="tanrica-education-10084322_1920.png" alt="Teacher engaging with students in classroom" />
+      </div>
+      <div class="about-text">
+        <h3>Hi, I'm Shailaja 👋</h3>
+        <p>
+          I'm a <span class="about-highlight">Qualified Early Childhood Teacher</span> with a Graduate Diploma
+          in Early Childhood Education (Victoria University, 2025) and positive ACECQA skills assessment.
+          I am registered with the Tasmanian Teachers Registration Board (TRB) and hold a current RWVP.
+        </p>
+        <br/>
+        <p>
+          I'm experienced in both early childhood settings and primary school relief/casual teaching.
+          I'm passionate about <span class="about-highlight">play-based learning</span>, the EYLF,
+          and building <span class="about-highlight">inclusive, safe learning environments</span>
+          for children birth to 6 years. My approach is always child-centred, culturally responsive,
+          and rooted in warm, trusting relationships with children and families.
+        </p>
+        <div class="about-badges">
+          <div class="about-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Rosetta, TAS
+          </div>
+          <div class="about-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            TRB Registered
+          </div>
+          <div class="about-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+            Birth to 6 Years
+          </div>
+          <div class="about-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            Play-Based Learning
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-up" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:white;display:block;">
+  <path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="var(--peach)"/>
+</svg>
+
+<!-- ───────────────────── CERTIFICATIONS ───────────────────── -->
+<section class="section-peach" id="certifications">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading-pill" style="background:var(--teal);"></div>
+      <div>
+        <h2 style="color:var(--teal-dark);">Registrations &amp; Certifications</h2>
+        <p class="sub">All current &amp; valid</p>
+      </div>
+    </div>
+    <!-- chalkboard banner -->
+    <div class="cert-banner">
+      <img src="stux-back-to-school-2629361_1920.jpg" alt="Chalkboard with ABC" />
+      <div class="cert-banner-overlay">
+        <h3>Fully Qualified &amp; Registered</h3>
+      </div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <div class="cert-card-name">Tasmania Teacher Registration (TRB)</div>
+        <div class="cert-card-detail">No. 38221</div>
+        <div class="cert-badge">Expires 31/12/2030</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="cert-card-name">Work with Vulnerable People (RWVP)</div>
+        <div class="cert-card-detail">No. 981864283</div>
+        <div class="cert-badge">Expires 13/03/2031</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <div class="cert-card-name">First Aid — HLTAID012</div>
+        <div class="cert-card-detail">First Aid in Education &amp; Care Settings</div>
+        <div class="cert-badge">Completed May 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+        </div>
+        <div class="cert-card-name">ACECQA Positive Skills Assessment</div>
+        <div class="cert-card-detail">Australian Children's Education &amp; Care Quality Authority</div>
+        <div class="cert-badge">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <div class="cert-card-name">CHCPRT025</div>
+        <div class="cert-card-detail">Identify &amp; Report Children and Young People at Risk</div>
+        <div class="cert-badge">Current</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <div class="cert-card-name">National Police Check</div>
+        <div class="cert-card-detail">Cleared for education &amp; childcare settings</div>
+        <div class="cert-badge">Current</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <div class="cert-card-name">Child Protection Training</div>
+        <div class="cert-card-detail">Mandatory child protection obligations</div>
+        <div class="cert-badge">Current</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-down" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:var(--peach);display:block;">
+  <path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="white"/>
+</svg>
+
+<!-- ───────────────────── EDUCATION ───────────────────── -->
+<section class="section-white" id="education">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading-pill" style="background:var(--green);"></div>
+      <div>
+        <h2 style="color:#2e7d32;">Education</h2>
+        <p class="sub">Academic Qualifications</p>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-img">
+        <img src="geralt-board-73496_1920.jpg" alt="Chalkboard in classroom" />
+      </div>
+      <div class="edu-body">
+        <span class="edu-badge">Graduate Diploma</span>
+        <h3>Early Childhood Education</h3>
+        <div class="school">Victoria University — Sydney Campus</div>
+        <div class="year">Completed April 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-up" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:white;display:block;">
+  <path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="var(--peach)"/>
+</svg>
+
+<!-- ───────────────────── EXPERIENCE ───────────────────── -->
+<section class="section-peach" id="experience">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading-pill"></div>
+      <div>
+        <h2>Teaching Experience</h2>
+        <p class="sub">School settings &amp; practicum placements</p>
+      </div>
+    </div>
+    <div class="exp-list">
+
+      <!-- School setting — full image top -->
+      <div class="exp-card exp-card-full-img">
+        <div class="exp-top-img">
+          <img src="vecteezy_itsu_m0t8_160905.jpg" alt="Teacher in classroom with students" />
+          <div class="exp-top-img-overlay"></div>
+        </div>
+        <div class="exp-body">
+          <span class="exp-tag tag-school">School Setting</span>
+          <div class="exp-title">Relief / Casual Teacher — Kindergarten</div>
+          <div class="exp-org">Clarendon Vale Primary School · Clarendon Vale, TAS</div>
+          <span class="exp-period period-green">2026 – Present</span>
+          <ul>
+            <li>Delivered structured Literacy and Numeracy sessions aligned with the Tasmanian curriculum framework for Kindergarten learners.</li>
+            <li>Facilitated the <strong>Mini Movers</strong> programme, promoting gross motor development, body awareness, and physical wellbeing.</li>
+            <li>Maintained a nurturing, play-based classroom environment consistent with the developmental needs of Kindergarten-aged children.</li>
+            <li>Applied child-safe practices and mandatory reporting obligations in line with Tasmanian Department of Education guidelines.</li>
+          </ul>
+          <div class="exp-attribution">Illustration: <a href="https://www.vecteezy.com" target="_blank" rel="noopener">Vecteezy.com</a></div>
+        </div>
+      </div>
+
+      <!-- Practicum 1 — side image -->
+      <div class="exp-card exp-card-img">
+        <div class="exp-side-img contain-img">
+          <img src="openclipart-vectors-kids-160168_1920.png" alt="Children with backpacks heading to school" />
+        </div>
+        <div class="exp-body">
+          <span class="exp-tag tag-practicum">Practicum Placement</span>
+          <div class="exp-title">Pre-Service Teacher — Birth to 24 Months</div>
+          <div class="exp-org">Mother Love Early Education &amp; Childcare · Burwood, NSW</div>
+          <span class="exp-period period-teal">2024</span>
+          <ul>
+            <li>Supported sensory, motor, language, and social skill development through purposeful play and daily routines.</li>
+            <li>Provided responsive care aligned with NQS Quality Area 2, including feeding, comforting, and sleep routines.</li>
+            <li>Built trust-based partnerships with families to promote each infant's holistic wellbeing and learning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Practicum 2 — side image -->
+      <div class="exp-card exp-card-img">
+        <div class="exp-side-img contain-img">
+          <img src="moteoo-gender-1459661_1920.png" alt="Teacher sitting in circle with children" />
+        </div>
+        <div class="exp-body">
+          <span class="exp-tag tag-practicum">Practicum Placement</span>
+          <div class="exp-title">Pre-Service Teacher — 24 to 36 Months</div>
+          <div class="exp-org">Montessori Academy · Toongabbie, NSW</div>
+          <span class="exp-period period-teal">2024</span>
+          <ul>
+            <li>Planned and implemented Montessori-inspired, age-appropriate activities supporting toddlers' learning and development.</li>
+            <li>Promoted independence, self-help skills, and fine motor development through hands-on learning materials.</li>
+            <li>Supported language, social, and emotional growth through guided play, storytelling, and group activities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Practicum 3 — full image top (montessori room) -->
+      <div class="exp-card exp-card-full-img">
+        <div class="exp-top-img">
+          <img src="vecteezy_vector-interior-of-room-in-montessori-kindergarten_15680304.jpg"
+               alt="Montessori kindergarten classroom interior" />
+          <div class="exp-top-img-overlay"></div>
+        </div>
+        <div class="exp-body">
+          <span class="exp-tag tag-practicum">Practicum Placement</span>
+          <div class="exp-title">Pre-Service Teacher — 36 Months to Preschool</div>
+          <div class="exp-org">Rainbow Village Childcare Centre · Harris Park, NSW</div>
+          <span class="exp-period period-teal">2024 – 2025</span>
+          <ul>
+            <li>Planned play-based and inquiry-led learning experiences to support cognitive, social, and emotional development.</li>
+            <li>Fostered language, literacy, numeracy, and problem-solving through guided activities and group projects.</li>
+            <li>Observed and documented children's learning outcomes and developmental progress in line with EYLF outcomes.</li>
+          </ul>
+          <div class="exp-attribution">Illustration: <a href="https://www.vecteezy.com" target="_blank" rel="noopener">Vecteezy.com</a></div>
+        </div>
+      </div>
+
+      <!-- Other experience -->
+      <div class="exp-card exp-card-img">
+        <div class="exp-side-img contain-img">
+          <img src="vecteezy_happy-school-children-with-piles-of-books_.png"
+               alt="Happy school children with books" />
+        </div>
+        <div class="exp-body">
+          <span class="exp-tag tag-other">Other Relevant Experience</span>
+          <div class="exp-title">Early Childhood Educator</div>
+          <div class="exp-org">Rainbow Village Childcare Centre · Harris Park, NSW</div>
+          <span class="exp-period period-yellow">2024 – 2025</span>
+          <ul>
+            <li>Assisted in delivering daily programmes for children aged 3–5 in a stimulating, inclusive environment.</li>
+            <li>Maintained a safe, nurturing, and culturally responsive learning environment at all times.</li>
+            <li>Communicated proactively with families regarding children's progress, milestones, and wellbeing.</li>
+          </ul>
+          <div class="exp-attribution">Illustration: <a href="https://www.vecteezy.com" target="_blank" rel="noopener">Vecteezy.com</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-down" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:var(--peach);display:block;">
+  <path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="white"/>
+</svg>
+
+<!-- ───────────────────── SKILLS ───────────────────── -->
+<section class="section-white" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-heading-pill" style="background:var(--teal);"></div>
+      <div>
+        <h2 style="color:var(--teal-dark);">Key Skills</h2>
+        <p class="sub">Areas of expertise</p>
+      </div>
+    </div>
+    <div class="skills-row">
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-card-icon">
+            <img src="tanrica-education-10084322_1920.png" alt="Curriculum icon" />
+          </div>
+          <h3>Curriculum &amp; Pedagogy</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">EYLF Planning &amp; Documentation</span>
+          <span class="skill-tag">NQF &amp; NQS Compliance</span>
+          <span class="skill-tag">Play-Based Learning</span>
+          <span class="skill-tag">Inquiry-Led Programming</span>
+          <span class="skill-tag">Birth to 6 Years</span>
+          <span class="skill-tag">Developmental Assessment</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-card-icon teal-bg">
+            <img src="openclipart-vectors-kids-160168_1920.png" alt="Environment icon" />
+          </div>
+          <h3>Practice &amp; Environment</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Child-Safe Environments</span>
+          <span class="skill-tag">Health, Safety &amp; Wellbeing</span>
+          <span class="skill-tag">Inclusive Practice</span>
+          <span class="skill-tag">Culturally Responsive Teaching</span>
+          <span class="skill-tag">Positive Behaviour Guidance</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-card-icon green-bg">
+            <img src="moteoo-gender-1459661_1920.png" alt="Partnerships icon" />
+          </div>
+          <h3>Partnerships &amp; Teamwork</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Family Engagement</span>
+          <span class="skill-tag">Proactive Communication</span>
+          <span class="skill-tag">Collaborative Teamwork</span>
+          <span class="skill-tag">Educational Leadership</span>
+          <span class="skill-tag">Centre Leadership Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-up" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:white;display:block;">
+  <path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="var(--peach-dark)"/>
+</svg>
+
+<!-- ───────────────────── FOOTER ───────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Shailaja Hamal</div>
+      <div class="footer-tagline">Early Childhood Teacher · Rosetta, TAS</div>
+      <div class="footer-email">
+        <a href="mailto:shailuhamal40@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          shailuhamal40@gmail.com
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-refs">References available upon request</p>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 Shailaja Hamal · Early Childhood Teacher</div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id], div[id="top"]');
+  const links = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+  // Close nav on link click (mobile)
+  links.forEach(l => l.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+  }));
+</script>
+
+</body>
+</html>
